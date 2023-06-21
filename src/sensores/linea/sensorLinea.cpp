@@ -49,6 +49,12 @@ void SensorLinea::printInfo(){
     info.concat("Id: "); info.concat(idSensor);
     info.concat("Pin: "); info.concat(pin);
     info.concat("; Valor leido: "); info.concat(ultimoValorLeido);
+    info.concat("; Sup Blanca: ");
+
+    if(ultimoValorLeido == REF_BLANCO)
+        info.concat(" SI.");
+    else
+        info.concat(" NO.");
 
     Serial.println(info);
 }
