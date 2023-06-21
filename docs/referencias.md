@@ -15,7 +15,7 @@ A continuación, se muestran todas las referencias para el controlador del senso
 
 A continuación, se muestran todas las referencias para el controlador de los sensores de ultrasonidos:
 
-* :construction:
+* [Tutorial de Arduino y Sensores Ultrasónicos HC-SR04](https://naylampmechatronics.com/blog/10_tutorial-de-arduino-y-sensor-ultrasonico-hc-sr04.html)
 
 ****
 
