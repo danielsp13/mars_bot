@@ -10,5 +10,7 @@
 
 //Inclusion de controlador de Sensor de lineas
 #include "sensores/linea/sensorLinea.h"
+//Inclusion de controlador de Sensor de Ultrasonidos
+#include "sensores/ultrasonidos/sensorUltrasonidos.h"
 
 #endif //_SMP_MD_HEADERLIBS_H
