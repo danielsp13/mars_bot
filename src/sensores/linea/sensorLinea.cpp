@@ -11,7 +11,9 @@
 
 // IMPLEMENTACION DE CONSTRUCTOR
 
-SensorLinea::SensorLinea(uint8_t nPin){
+SensorLinea::SensorLinea(String id, uint8_t nPin){
+    // -- Asignar id de sensor
+    idSensor = id;
     // -- Asignar valor de pin
     pin = nPin;
     // -- Asignar valor ultimo leido
@@ -19,6 +21,7 @@ SensorLinea::SensorLinea(uint8_t nPin){
 
     // -- Especificar modo de pin en Arduino
     pinMode(pin, MODO_PIN);
+    
     // -- Iniciar terminal (solo depuracion)
     Serial.begin(SERIAL_NUMBER);
 }
@@ -43,6 +46,7 @@ inline int SensorLinea::lineaNegra(){
 
 void SensorLinea::printInfo(){
     String info = "SENSOR LINEA >> ";
+    info.concat("Id: "); info.concat(idSensor);
     info.concat("Pin: "); info.concat(pin);
     info.concat("; Valor leido: "); info.concat(ultimoValorLeido);
 

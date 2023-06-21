@@ -16,6 +16,8 @@
  */
 class SensorLinea{
     private:
+        //Establece un identificador del sensor
+        String idSensor;
         //Pin de conexion a la placa Arduino 1 R3.
         uint8_t pin;
         //Modo de conexion de pin con placa Arduino
@@ -36,9 +38,10 @@ class SensorLinea{
         /**
          * @brief Constructor del controlador. Recibe como parametro
          * el pin de conexion del dispositivo con la placa Arduino
+         * @param idSensor : identificacion del sensor
          * @param nPin : Numero de pin
          */
-        SensorLinea(uint8_t nPin);
+        SensorLinea(String idSensor, uint8_t nPin);
 
         /**
          * @brief Consulta el sensor, recuperando el valor que muestra
