@@ -19,6 +19,16 @@ Este proyecto se ha desarrollado utilizando **[Arduino IDE](https://support.ardu
 
 ****
 
+### :books: Documentación:
+
+La documentación del proyecto puede encontrarse en los siguientes ficheros:
+
+* :package: **[Estructura del proyecto](docs/estructura_proyecto.md)**: Se especifica el esquema de directorios y ficheros del proyecto.
+* :computer: **[Clases](docs/clases.md)**: Se especifican las clases desarrolladas para el control de los dispositivos del robot.
+* :page_facing_up: **[Inventario](docs/inventario.md)**: Se especifica el listado de componentes esenciales para el funcionamiento del robot.
+
+****
+
 ### :shell: Órdenes de instalación y verificación:
 
 :construction: 
