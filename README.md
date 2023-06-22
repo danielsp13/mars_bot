@@ -27,6 +27,7 @@ La documentación del proyecto puede encontrarse en los siguientes ficheros:
 * :computer: **[Clases](docs/clases.md)**: Se especifican las clases desarrolladas para el control de los dispositivos del robot.
 * :page_facing_up: **[Inventario](docs/inventario.md)**: Se especifica el listado de componentes esenciales para el funcionamiento del robot.
 * :bookmark: **[Referencias](docs/referencias.md)**: Se especifican las referencias consultadas para el desarrollo del código del robot.
+* :heavy_plus_sign: **[Cálculos](docs/calculos.md)**: Se especifican algunos cálculos utilizados para los métodos de controladores.
 
 ****
 
