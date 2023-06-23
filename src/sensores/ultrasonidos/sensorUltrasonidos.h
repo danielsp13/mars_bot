@@ -22,8 +22,8 @@ class SensorUltrasonidos{
         //Pin de conexion del echo a la placa Arduino 1 R3
         uint8_t pinEcho;
         //Modo de conexion de pines con placa Arduino
-        const uint8_t MODO_PIN_TRIGGER = INPUT;
-        const uint8_t MODO_PIN_ECHO = OUTPUT;
+        const uint8_t MODO_PIN_TRIGGER = OUTPUT;
+        const uint8_t MODO_PIN_ECHO = INPUT;
         //Constante necesaria para el calculo de la distancia (ver documentacion)
         const uint8_t VELOCIDAD_CM_US = 59;
         //Ultimo valor leido por el sensor (distancia)
@@ -56,5 +56,7 @@ class SensorUltrasonidos{
         void printInfo();
 
 };
+
+#include "sensorUltrasonidos.cpp"
 
 #endif //_SMP_MD_SENSORULTRASONIDOS_H

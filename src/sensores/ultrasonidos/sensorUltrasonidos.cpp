@@ -5,8 +5,6 @@
  * @version 0.1.0
  */
 
-#include "sensorUltrasonidos.h"
-
 // =================================================================
 
 // IMPLEMENTACION DE CONSTRUCTOR
@@ -56,7 +54,8 @@ void SensorUltrasonidos::leerValor(){
 void SensorUltrasonidos::printInfo(){
     String info = "SENSOR ULTRASONIDOS >> ";
     info.concat("Id: "); info.concat(idSensor);
-    info.concat("; Pin: "); info.concat(pin);
+    info.concat("; Pin Trigger: "); info.concat(pinTrigger);
+    info.concat("; Pin Echo: "); info.concat(pinEcho);
     info.concat("; Distancia: "); info.concat(ultimoValorLeido); info.concat(" cm.");
 
     Serial.println(info);

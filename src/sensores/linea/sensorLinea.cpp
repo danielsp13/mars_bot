@@ -5,7 +5,7 @@
  * @version 0.1.0
  */
 
-#include "sensorLinea.h"
+//#include "sensorLinea.h"
 
 // =================================================================
 
@@ -37,7 +37,7 @@ inline void SensorLinea::leerValor(){
 inline int SensorLinea::lineaNegra(){
     leerValor();
 
-    return ultimoValorLeido == REF_BLANCO;
+    return ultimoValorLeido == REF_NEGRA;
 }
 
 // =================================================================
@@ -47,11 +47,11 @@ inline int SensorLinea::lineaNegra(){
 void SensorLinea::printInfo(){
     String info = "SENSOR LINEA >> ";
     info.concat("Id: "); info.concat(idSensor);
-    info.concat("Pin: "); info.concat(pin);
+    info.concat("; Pin: "); info.concat(pin);
     info.concat("; Valor leido: "); info.concat(ultimoValorLeido);
-    info.concat("; Sup Blanca: ");
+    info.concat("; Sup Negra: ");
 
-    if(ultimoValorLeido == REF_BLANCO)
+    if(ultimoValorLeido == REF_NEGRA)
         info.concat(" SI.");
     else
         info.concat(" NO.");

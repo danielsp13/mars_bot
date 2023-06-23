@@ -22,8 +22,8 @@ class SensorLinea{
         uint8_t pin;
         //Modo de conexion de pin con placa Arduino
         const uint8_t MODO_PIN = INPUT;
-        //Valor de referencia para superficies blancas (HIGH == Blanco)
-        const uint16_t REF_BLANCO = HIGH;
+        //Valor de referencia para superficies negras (HIGH == Blanco; LOW == Negro)
+        const uint16_t REF_NEGRA = LOW;
         //Variable para almacenar el ultimo valor leido por el sensor (depuracion)
         uint8_t ultimoValorLeido;
 
@@ -61,5 +61,7 @@ class SensorLinea{
          */
         void printInfo();
 };
+
+#include "sensorLinea.cpp"
 
 #endif //_SMP_MD_SENSORLINEA_H
