@@ -7,9 +7,10 @@
 En la siguiente lista, se indica las conexiones al protoboard:
 
 * Conexión a **GND (tierra)**, desde Arduino. (Cable Negro)
-* Conexión a **5V (VCC)**, desde Arduino (Cable Rojo)
+* Conexión a **VIN (12V)**, desde Arduino (Cable Rojo)
 * Conexiones de alimentación (GND, 5V) de *Sensores de Linea*: 2.
 * Conexiones de alimentación (GND, 5V) de *Sensores de Ultrasonidos*: 3.
+* Conexiones de alimentación (GND, Vin) de Motores: 2.
 
 ****
 
@@ -20,13 +21,19 @@ En la siguiente lista, se especifican todos los pines ocupados de la placa Ardui
 **CONEXIONES EN PINES DIGITALES:**
 
 - Sensores de linea: 2
-  - Sensor Izquierdo: 8
-  - Sensor Derecho: 9
+  - Sensor Izquierdo: A5
+  - Sensor Derecho: A4
 - Sensores de Ultrasonidos: 3
   - Sensor Izquierdo: 2 (Trigger), 3 (Echo)
   - Sensor Central: 4 (Trigger), 5 (Echo)
   - Sensor Derecho : 6 (Trigger), 7 (Echo)
+- Motores: 2
+  - Motor Izquierdo: 10 (Sentido 1); 11 (Sentido 2)
+  - Motor Derecho: 12 (Sentido 1); 13 (Sentido 2)
+
 
 **CONEXIONES EN PINES ANALÓGICOS:**
 
-- *Ninguna*.
+- Motores: 2
+  - Motor Izquierdo: A1 (Velocidad)
+  - Motor Derecho: A0 (Velocidad)

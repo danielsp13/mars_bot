@@ -9,12 +9,26 @@ El esquema es el siguiente:
 ~~~bash
 mars_bot
 ├── docs
+│   ├── cableado.md
+│   ├── calculos.md
 │   ├── clases.md
-│   ├── doxy
 │   ├── estructura_proyecto.md
-│   └── inventario.md
+│   ├── inventario.md
+│   └── referencias.md
 ├── examples
+│   ├── exampleMotor
+│   │   └── exampleMotor.ino
+│   ├── exampleSensorLinea
+│   │   └── exampleSensorLinea.ino
+│   └── exampleSensorUltrasonidos
+│       └── exampleSensorUltrasonidos.ino
 ├── LICENSE
+├── main
+│   ├── mars_bot.ino
+│   └── MarsCore
+│       ├── MarsCore.cpp
+│       └── MarsCore.h
+├── Makefile
 ├── README.md
 └── src
     ├── headerLibs.h
@@ -36,4 +50,5 @@ La lista de directorios más importantes son:
 
 * `docs`: Directorio de documentación del proyecto, así como documentación del código.
 * `examples`: Directorio de sketchs de Arduino para pruebas.
+* `main`: Directorio del sketch final del proyecto.
 * `src`: Contiene las cabeceras y los fuentes del proyecto.
