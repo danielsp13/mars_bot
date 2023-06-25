@@ -31,11 +31,39 @@ La documentación del proyecto puede encontrarse en los siguientes ficheros:
 
 ****
 
-### :shell: Órdenes de instalación y verificación:
+### :shell: Órdenes de construcción y configuración de proyectos:
 
-:construction: 
+Para poder cargar adecuadamente el proyecto final al robot de combate, hay que hacer los siguientes pasos:
 
+1. Conectar la placa Arduino UNO vía USB al ordenador.
 
+2. Habilitar permisos de control del puerto de conexión, esto se puede hacer utilizando la orden (requiere sudo):
+
+   ~~~bash
+   $ make detectTTY
+   ~~~
+
+3. Construir proyecto Arduino IDE para su volcado. Esto se puede hacer con la siguiente orden, que creará el proyecto de arduino en `arduino_projects/mars_bot`:
+
+   ~~~bash
+   $ make mars
+   ~~~
+
+4. Abrir Arduino IDE, y abrir el sketch del proyecto final  `mars_bot.ino`.
+
+5. Enviar a la placa.
+
+6. Si se quieren obtener además los proyectos referentes a los tests, simplemente ejecutar:
+
+   ~~~bash
+   $ make
+   ~~~
+
+7. Si se quieren obtener sólo los proyectos referentes a los tests, simplemente ejecutar:
+
+   ~~~bash
+   $ make examples
+   ~~~
 
 ****
 
