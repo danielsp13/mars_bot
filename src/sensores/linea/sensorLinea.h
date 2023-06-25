@@ -23,9 +23,14 @@ class SensorLinea{
         //Modo de conexion de pin con placa Arduino
         const uint8_t MODO_PIN = INPUT;
         //Valor de referencia para superficies negras (HIGH == Blanco; LOW == Negro)
-        const uint16_t REF_NEGRA = LOW;
-        //Variable para almacenar el ultimo valor leido por el sensor (depuracion)
-        uint8_t ultimoValorLeido;
+        const uint16_t UMBRAL_NEGRO = 100;
+        //Variable para almacenar el ultimo valor leido por el sensor
+        uint8_t superficieLeida;
+
+        /**
+         * @brief Consulta el sensor, recuperando el valor que muestra
+         */
+        void obtenerSuperficie();
 
     public:
         // --- ATRIBUTOS DE CLASE ---
@@ -44,16 +49,11 @@ class SensorLinea{
         SensorLinea(String idSensor, uint8_t nPin);
 
         /**
-         * @brief Consulta el sensor, recuperando el valor que muestra
-         */
-        inline void leerValor();
-
-        /**
          * @brief Comprueba si el lector de linea esta situado sobre el arco
          * negro de la circunferencia del tatami
          * @return 1 si esta sobre la referencia del negro, 0 en otro caso
          */
-        inline int lineaNegra();
+        int scanBorde();
 
         /**
          * @brief Imprime la informacion del controlador de sensor de linea

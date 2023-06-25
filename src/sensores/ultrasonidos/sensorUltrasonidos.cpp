@@ -17,7 +17,7 @@ SensorUltrasonidos::SensorUltrasonidos(String id, uint8_t nPinTrigger, uint8_t n
     pinEcho = nPinEcho;
 
     // -- Asignar ultimo valor leido
-    ultimoValorLeido = -1;
+    distanciaLeida = -1;
 
     // -- Activar modos de pin
     pinMode(pinTrigger, MODO_PIN_TRIGGER);
@@ -34,7 +34,7 @@ SensorUltrasonidos::SensorUltrasonidos(String id, uint8_t nPinTrigger, uint8_t n
 
 // IMPLEMENTACION DE METODOS DE CONTROL
 
-void SensorUltrasonidos::leerValor(){
+void SensorUltrasonidos::obtenerDistancia(){
     // -- Enviar pulso de 10us a traves de trigger
     digitalWrite(pinTrigger, HIGH);
     delayMicroseconds(DELAY);
@@ -44,7 +44,14 @@ void SensorUltrasonidos::leerValor(){
     long tiempo = pulseIn(pinEcho, HIGH);
 
     // -- Calcular distancia (y asignar a valor leido)
-    ultimoValorLeido = tiempo / VELOCIDAD_CM_US;
+    distanciaLeida = tiempo / VELOCIDAD_CM_US;
+}
+
+long SensorUltrasonidos::scan(){
+    // -- Obtenemos el valor
+    obtenerDistancia();
+
+    return distanciaLeida;
 }
 
 // =================================================================
@@ -56,7 +63,7 @@ void SensorUltrasonidos::printInfo(){
     info.concat("Id: "); info.concat(idSensor);
     info.concat("; Pin Trigger: "); info.concat(pinTrigger);
     info.concat("; Pin Echo: "); info.concat(pinEcho);
-    info.concat("; Distancia: "); info.concat(ultimoValorLeido); info.concat(" cm.");
+    info.concat("; Distancia: "); info.concat(distanciaLeida); info.concat(" cm.");
 
     Serial.println(info);
 }

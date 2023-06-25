@@ -27,7 +27,12 @@ class SensorUltrasonidos{
         //Constante necesaria para el calculo de la distancia (ver documentacion)
         const uint8_t VELOCIDAD_CM_US = 59;
         //Ultimo valor leido por el sensor (distancia)
-        long ultimoValorLeido;
+        long distanciaLeida;
+
+        /**
+         * @brief Consulta el sensor, recuperando el valor que muestra
+         */
+        void obtenerDistancia();
 
     public:
         //Establecer numero de terminal por defecto (depuracion)
@@ -45,9 +50,11 @@ class SensorUltrasonidos{
         SensorUltrasonidos(String id, uint8_t nPinTrigger, uint8_t nPinEcho);
 
         /**
-         * @brief Consulta el sensor, recuperando el valor que muestra
+         * @brief Ejecuta el sensor de ultrasonidos, devolviendo el valor que ha
+         * detectado el sensor
+         * @return distancia leida
          */
-        void leerValor();
+        long scan();
         
         /**
          * @brief Imprime la informacion del controlador de sensor de linea
