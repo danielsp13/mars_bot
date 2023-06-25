@@ -23,4 +23,4 @@ A continuación, se muestran todas las referencias para el controlador de los se
 
 A continuación, se muestran todas las referencias para el controlador del driver de los motores:
 
-* :construction:
+* [SMP Práctica 5 PWM](https://www.tinkercad.com/things/dXdPdnPKeO0-smpdanielperezp5rpmej1/editel?sharecode=jTYB3TSFrVpiLoJbGlN1IwYdLHH9Jhz4R1qDyXEGUrk)
