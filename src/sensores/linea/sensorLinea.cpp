@@ -17,7 +17,7 @@ SensorLinea::SensorLinea(String id, uint8_t nPin){
     // -- Asignar valor de pin
     pin = nPin;
     // -- Asignar valor ultimo leido
-    ultimoValorLeido = -1;
+    superficieLeida = -1;
 
     // -- Especificar modo de pin en Arduino
     pinMode(pin, MODO_PIN);
@@ -30,14 +30,14 @@ SensorLinea::SensorLinea(String id, uint8_t nPin){
 
 // IMPLEMENTACION DE METODOS DE CONTROL
 
-inline void SensorLinea::leerValor(){
-    ultimoValorLeido = digitalRead(pin);
+void SensorLinea::obtenerSuperficie(){
+    superficieLeida = analogRead(pin);
 }
 
-inline int SensorLinea::lineaNegra(){
-    leerValor();
+int SensorLinea::scanBorde(){
+    obtenerSuperficie();
 
-    return ultimoValorLeido == REF_NEGRA;
+    return superficieLeida < UMBRAL_NEGRO;
 }
 
 // =================================================================
@@ -48,10 +48,10 @@ void SensorLinea::printInfo(){
     String info = "SENSOR LINEA >> ";
     info.concat("Id: "); info.concat(idSensor);
     info.concat("; Pin: "); info.concat(pin);
-    info.concat("; Valor leido: "); info.concat(ultimoValorLeido);
+    info.concat("; Valor leido: "); info.concat(superficieLeida);
     info.concat("; Sup Negra: ");
 
-    if(ultimoValorLeido == REF_NEGRA)
+    if(superficieLeida < UMBRAL_NEGRO)
         info.concat(" SI.");
     else
         info.concat(" NO.");

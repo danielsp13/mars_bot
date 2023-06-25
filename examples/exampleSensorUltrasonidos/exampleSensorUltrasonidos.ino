@@ -31,7 +31,7 @@ const String SEPARATOR = "======================================================
  */
 void testSensor(const SensorUltrasonidos & s){
     //1. Medir distancia
-    s.leerValor();
+    s.scan();
     //2. Imprimir informacion
     s.printInfo();
 }
@@ -39,7 +39,7 @@ void testSensor(const SensorUltrasonidos & s){
 // =================================================================================
 
 void setup(){
-    Serial.begin(9600);
+    Serial.begin(SensorUltrasonidos::SERIAL_NUMBER);
 }
 
 void loop(){

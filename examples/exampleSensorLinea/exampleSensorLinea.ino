@@ -8,12 +8,12 @@
 #include "sensores/linea/sensorLinea.h"
 
 // Definicion de pines
-#define PIN_SENSORLINEA_IZDA 8
-#define PIN_SENSORLINEA_DCHA 9
+#define PIN_SENSORLINEA_DCHA A4
+#define PIN_SENSORLINEA_IZDA A5
 
 // Definicion de controladores de sensor
-SensorLinea sensorIzda = SensorLinea("SLINEA_IZDA",PIN_SENSORLINEA_IZDA);
 SensorLinea sensorDcha = SensorLinea("SLINEA_DCHA",PIN_SENSORLINEA_DCHA);
+SensorLinea sensorIzda = SensorLinea("SLINEA_IZDA",PIN_SENSORLINEA_IZDA);
 
 const uint16_t DELAY = 1500;
 const String SEPARATOR = "==========================================================";
@@ -24,7 +24,7 @@ const String SEPARATOR = "======================================================
  */
 void testSensor(const SensorLinea & s){
     //1. Comprobar superficie
-    s.lineaNegra();
+    s.scanBorde();
     //2. Imprimir informacion
     s.printInfo();
 }
@@ -32,7 +32,7 @@ void testSensor(const SensorLinea & s){
 // =================================================================================
 
 void setup(){
-    Serial.begin(9600);
+    Serial.begin(SensorLinea::SERIAL_NUMBER);
 }
 
 void loop(){
